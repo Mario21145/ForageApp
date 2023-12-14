@@ -39,7 +39,7 @@ class ForageableListFragment : Fragment() {
 
     private val viewModel: ForageableViewModel by activityViewModels {
         ForageableViewModelFactory(
-            (activity?.application as BaseApplication).database.foragableDao()
+            (activity?.application as BaseApplication).database.getDao()
         )
     }
 

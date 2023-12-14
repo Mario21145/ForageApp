@@ -30,7 +30,6 @@ import com.example.forage.model.Forageable
 abstract class ForageDatabase : RoomDatabase(){
 
     abstract fun getDao() : ForageableDao
-    abstract fun foragableDao(): ForageableDao
 
     companion object {
         @Volatile

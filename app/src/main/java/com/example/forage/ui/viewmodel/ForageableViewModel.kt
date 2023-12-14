@@ -34,18 +34,7 @@ class ForageableViewModel(
 
     val allForageables: LiveData<List<Forageable>> = forageableDao.getForageables().asLiveData()
 
-    fun getById(id : Long) : LiveData<Forageable?>{
-        val liveDataResult = MutableLiveData<Forageable?>()
-
-        viewModelScope.launch(Dispatchers.IO) {
-            val forageable = forageableDao.getForageable(id).singleOrNull()
-            withContext(Dispatchers.Main) {
-                liveDataResult.value = forageable
-            }
-        }
-
-        return liveDataResult
-    }
+    fun getForageable(id : Long) : LiveData<Forageable> = forageableDao.getForageable(id).asLiveData()
 
     fun addForageable(
         name: String,

@@ -38,11 +38,11 @@ interface ForageableDao {
     fun getForageable(id: Long): Flow<Forageable>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(forageable: Forageable)
+     fun insert(forageable: Forageable)
 
     @Update
-    suspend fun update(forageable: Forageable)
+     fun update(forageable: Forageable)
 
     @Delete
-    suspend fun delete(forageable: Forageable)
+     fun delete(forageable: Forageable)
 }
